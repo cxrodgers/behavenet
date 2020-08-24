@@ -51,7 +51,7 @@ def get_all_params(search_type='grid_search', args=None):
 
 def add_to_parser(parser, arg_name, value):
     if isinstance(value, list):
-        parser.opt_list('--' + arg_name, options=value, tunable=True)
+        parser.opt_list('--' + arg_name, options=value, tunable=True, default=value[0])
     else:
         parser.add_argument('--' + arg_name, default=value)
 
